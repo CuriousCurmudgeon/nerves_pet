@@ -51,3 +51,7 @@ dtoverlay=miniuart-bt
 # Bluetooth. This has a small performance impact. See
 # https://www.raspberrypi.org/documentation/computers/config_txt.html#overclocking.
 core_freq=250
+
+# Device tree overlay for LIRC
+dtoverlay=gpio-ir,gpio_pin=18
+dtoverlay=gpio-ir-tx,gpio_pin=17
