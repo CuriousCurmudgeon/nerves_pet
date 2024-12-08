@@ -14,10 +14,19 @@ defmodule NervesPet.Application do
         # {NervesPet.Worker, arg},
       ] ++ target_children()
 
+    prepare_system(target())
+
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: NervesPet.Supervisor]
     Supervisor.start_link(children, opts)
+  end
+
+  def prepare_system(:host) do
+  end
+
+  def prepare_system(_target) do
+    File.makdir_p("/var/run/lirc")
   end
 
   # List all child processes to be supervised
@@ -29,6 +38,7 @@ defmodule NervesPet.Application do
         #
         # Starts a worker by calling: Host.Worker.start_link(arg)
         # {Host.Worker, arg},
+        {MuonTrap.Daemon, ["lircd", ["--nodaemon"]]}
       ]
     end
   else
