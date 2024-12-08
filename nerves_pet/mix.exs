@@ -50,7 +50,7 @@ defmodule NervesPet.MixProject do
       # changes to your application are needed.
       {:nerves_system_rpi3, "~> 1.24", runtime: false, targets: :rpi3},
       {:nerves_pet_rpi3,
-       path: "../../nerves_pet_rpi3",
+       path: "../nerves_pet_rpi3",
        runtime: false,
        targets: :nerves_pet_rpi3,
        nerves: [compile: true]}
