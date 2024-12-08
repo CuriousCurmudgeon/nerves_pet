@@ -38,6 +38,8 @@ defmodule NervesPet.Application do
         #
         # Starts a worker by calling: Host.Worker.start_link(arg)
         # {Host.Worker, arg},
+
+        # Does this even need the --nodaemon flag if we set it in lirc_options.conf instead?
         {MuonTrap.Daemon, ["lircd", ["--nodaemon"]]}
       ]
     end
