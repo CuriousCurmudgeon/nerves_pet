@@ -1,0 +1,22 @@
+This patch was applied to LIRC at https://sourceforge.net/p/lirc/git/ci/5d9e0f17436a98aedd0da885bd0096e147e54423/.
+However, buildroot does not see to be pulling a version in with this patch yet.
+--- a/lib/drv_enum.c
++++ b/lib/drv_enum.c
+@@ -14,6 +14,7 @@
+ #include <stdbool.h>
+ #include <sys/stat.h>
+ #include <sys/types.h>
++#include <sys/sysmacros.h>
+ #include <dirent.h>
+ #include <errno.h>
+
+--- a/plugins/default.c
++++ b/plugins/default.c
+@@ -26,6 +26,7 @@
+ #include <stdint.h>
+ #include <stdlib.h>
+ #include <sys/stat.h>
++#include <sys/sysmacros.h>
+ #include <sys/types.h>
+ #include <sys/ioctl.h>
+ #include <sys/socket.h>
