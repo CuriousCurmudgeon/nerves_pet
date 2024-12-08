@@ -14,7 +14,7 @@ defmodule NervesPet.Application do
         # {NervesPet.Worker, arg},
       ] ++ target_children()
 
-    prepare_system(target())
+    prepare_system(Mix.target())
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
@@ -26,7 +26,7 @@ defmodule NervesPet.Application do
   end
 
   def prepare_system(_target) do
-    File.makdir_p("/var/run/lirc")
+    File.mkdir_p("/var/run/lirc")
   end
 
   # List all child processes to be supervised
